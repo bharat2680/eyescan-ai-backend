@@ -5,6 +5,10 @@ import numpy as np
 
 app = Flask(__name__)
 
+@app.route('/')
+def index():
+    return "EyeScan AI Backend is running."
+
 @app.route('/analyze', methods=['POST'])
 def analyze_eye():
     if 'image' not in request.files:
